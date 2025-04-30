@@ -9,3 +9,7 @@ password : root
 ###########################################
 
 Contains various cases to understand transaction propagation
+
+###########################################
+
+Added postman collections to help with API and payloads

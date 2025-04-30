@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "bbd4ff62-6307-46e9-8c0b-d7a528211e10",
+		"name": "TRANSACTION EXERCISE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14115436"
+	},
+	"item": [
+		{
+			"name": "Create Order and Customer but rollback for parent Exception",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerName\" : \"demoCustomer\",\r\n    \"orderItem\" : \"fail\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/order/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order and Customer but do not rollback customer when exception in parent",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerName\" : \"demoCustomer\",\r\n    \"orderItem\" : \"fail\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/order/customer/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"customer",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
